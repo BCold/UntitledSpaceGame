@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu23wmuhfqovh"]
+
+[ext_resource type="Script" path="res://Obstacles/Star/Star.cs" id="1_m5tr3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_856ww"]
+radius = 456.0
+
+[node name="Star" type="Area2D"]
+position = Vector2(960, 540)
+collision_layer = 3
+collision_mask = 3
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 200.0
+script = ExtResource("1_m5tr3")
+
+[node name="GravityWell" type="Polygon2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(9.53674e-07, -436)
+scale = Vector2(4.5, 4.5)
+color = Color(0.25, 0.25, 0.25, 1)
+polygon = PackedVector2Array(71.1111, 24.8889, 88.8889, 48, 97.7778, 71.1111, 101.333, 97.7778, 97.7778, 124.444, 87.1111, 149.333, 72.8889, 168.889, 51.5556, 184.889, 26.6667, 195.556, 0, 199.111, -26.6667, 195.556, -51.5555, 184.889, -72.8889, 168.889, -87.1111, 149.333, -97.7778, 124.444, -101.333, 97.7778, -97.7778, 71.1111, -87.1111, 46.2222, -72.8889, 26.6667, -51.5555, 10.6667, -26.6667, 0, 0, -3.55556, 26.6667, 0, 51.5556, 10.6667)
+
+[node name="Star" type="Polygon2D" parent="."]
+position = Vector2(0, -76)
+scale = Vector2(0.75, 0.75)
+polygon = PackedVector2Array(71.1111, 24.8889, 88.8889, 48, 97.7778, 71.1111, 101.333, 97.7778, 97.7778, 124.444, 87.1111, 149.333, 72.8889, 168.889, 51.5556, 184.889, 26.6667, 195.556, 0, 199.111, -26.6667, 195.556, -51.5555, 184.889, -72.8889, 168.889, -87.1111, 149.333, -97.7778, 124.444, -101.333, 97.7778, -97.7778, 71.1111, -87.1111, 46.2222, -72.8889, 26.6667, -51.5555, 10.6667, -26.6667, 0, 0, -3.55556, 26.6667, 0, 51.5556, 10.6667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_856ww")

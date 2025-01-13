@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://qofqws377wa4"]
+
+[ext_resource type="Script" path="res://Pawns/Player/Projectile/Projectile.cs" id="1_aibbh"]
+
+[node name="Projectile" type="CharacterBody2D"]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_aibbh")
+_speed = 400.0
+lifetime = 10.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(1, 0.5)
+color = Color(0.121569, 0.6, 0.121569, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 8, -8, 0, -8)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(1, 0.5)
+polygon = PackedVector2Array(0, 0, 8, 0, 8, -8, 0, -8)
+
+[node name="LifeTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="LifeTimeout"]
